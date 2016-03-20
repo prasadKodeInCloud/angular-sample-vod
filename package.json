@@ -1,0 +1,20 @@
+
+{
+  "name": "Video-on-Demand",
+  "version": "0.0.1",
+  "description": "Video on Demand Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+  	"express": "latest",
+    "assert": "latest",
+    "mongoskin": "latest",
+    "should": "latest",
+    "supertest": "latest",
+    "winston": "latest"
+  },
+  "author": "Prasad Hewage"
+}
+
