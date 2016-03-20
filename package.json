@@ -1,4 +1,3 @@
-
 {
   "name": "Video-on-Demand",
   "version": "0.0.1",
@@ -8,13 +7,16 @@
     "start": "node index.js"
   },
   "dependencies": {
-  	"express": "latest",
     "assert": "latest",
-    "mongoskin": "latest",
+    "body-parser": "^1.15.0",
+    "express": "latest",
+    "method-override": "^2.3.5",
+    "moment": "^2.12.0",
+    "mongodb": "^2.1.7",
+    "mongoskin": "^2.0.3",
     "should": "latest",
     "supertest": "latest",
     "winston": "latest"
   },
   "author": "Prasad Hewage"
 }
-
