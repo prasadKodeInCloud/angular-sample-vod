@@ -38,7 +38,7 @@ app.use(methodOverride());
  
 function start(config, db) {
 	var handlers = {
-		user: require('./src/controller/userHandler').load( db ),
+		user: require('./src/controller/user-handler.ctrl').load( db ),
 	    //history: require('./src/controller/historyHandler').load(db)
 	};
 	
