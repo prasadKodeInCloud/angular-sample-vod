@@ -1,0 +1,18 @@
+
+.thumbnail{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#slideContainer{
+    width: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 700px) and (min-width: 0px) {
+   .thumbnail{
+        display: block;            
+    }
+}
