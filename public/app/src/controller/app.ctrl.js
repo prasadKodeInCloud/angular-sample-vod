@@ -1,7 +1,7 @@
 
-app = angular.module('vod', [ 'ngRoute']);
+app = angular.module('vod',[]);
 
-app.config(function ( $routeProvider, $locationProvider, $sceDelegateProvider) {
-    $sceDelegateProvider.resourceUrlWhitelist(['self', '**']);
-});
+// app.config(function ( $routeProvider, $locationProvider, $sceDelegateProvider) {
+//     $sceDelegateProvider.resourceUrlWhitelist(['self', '**']);
+// });
 

@@ -1,13 +1,14 @@
+
 <html>
 	<head>
-		<script type="text/javascript" src="app/lib/require/require.js"></script>
-		<script type="text/javascript" src="app/lib/require/scripts.js"></script>
+		<!-- <script type="text/javascript" src="app/lib/require/require.js"></script>
+		<script type="text/javascript" src="app/lib/require/scripts.js"></script> -->
+		<script src="app/lib/angular/angular.min.js"></script>
+		<script type="text/javascript" src="app/src/controller/app.ctrl.js"></script>
 	</head>
 
 	<body ng-app="vod">
 		<h1> VOD Application</h1>
 		<div ng-include="'app/src/view/page/main.vw.html'"></div>
-		<input type="text" ng-model="name"/>
-  		<h1>Hello {{name}}</h1> 
 	</body>
 </html>
