@@ -2,7 +2,7 @@
 
 function setup( app,handlers) {
 	app.get('/', function(req, res){
- 		res.sendfile('./public/app/index.html'); 
+ 		res.sendFile( ROOT_PATH + '/public/app/index.html'); 
 	});
 
 	console.log("set router ####");
