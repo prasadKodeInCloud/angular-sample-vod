@@ -64,9 +64,15 @@
 
 .btn-right-history {
     float: right;
-    margin-top: -30px;
+    margin-top: -54px;
 }
 
-.small-thumbnail{
+.small-thumbnail {
     height: 94px;
+}
+
+.header-panel {
+    background-color: #12BBB5;
+    color: white;
+    padding: 4px;
 }
