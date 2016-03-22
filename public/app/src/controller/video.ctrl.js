@@ -16,6 +16,8 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 
 				video.imgUrl = video.imgUrl || CONFIG.DEFAULT_VIDEO_TILE;
 				video.url = video.contents[0].url;
+				video.title = video.title.trim();
+				video.name = video.title.length > 20? video.title.substr(0, 20) + '...' : video.title;
 
 				return video;
 			});
