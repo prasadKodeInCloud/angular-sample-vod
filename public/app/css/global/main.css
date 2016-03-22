@@ -61,3 +61,12 @@
     border-top-left-radius: 36px;
     right: 3px;
 } 
+
+.btn-right-history {
+    float: right;
+    margin-top: -30px;
+}
+
+.small-thumbnail{
+    height: 94px;
+}

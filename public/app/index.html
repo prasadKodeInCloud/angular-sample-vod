@@ -15,12 +15,23 @@
 
 		<link rel="stylesheet" type="text/css" href="app/css/bootstrap/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css"href="app/lib/font-awesome/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="app/css/global/admin-lte.css"/>
 		<link rel="stylesheet" type="text/css" href="app/css/global/main.css"/>
 
 	</head>
 
 	<body ng-app="vod">
 		<h1> VOD Application</h1>
+		<div>
+			<span>
+				<a class="btn btn-success btn-right-history" href="#" ng-click="showHistory()">
+				    <i class="fa fa-history fa-lg"></i>&nbsp;
+				    History
+			    </a>
+			</span>
+		</div>
+		<div class="clearfix"></div>
 		<div ng-include="'app/src/view/page/video_list.vw.html'"></div>
+		<div ng-include="'app/src/view/page/user_history.vw.html'"></div>
 	</body>
 </html>
