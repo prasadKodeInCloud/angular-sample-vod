@@ -3,8 +3,9 @@
 	<head>
 		<!-- <script type="text/javascript" src="app/lib/require/require.js"></script>
 		<script type="text/javascript" src="app/lib/require/scripts.js"></script> -->
-		<script src="app/lib/angular/angular.min.js"></script>
 		<script src="app/lib/jquery/jQuery-2.1.3.min.js"></script>
+		<script src="app/lib/angular/angular.min.js"></script>
+		<script src="app/lib/bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="app/lib/global/config.js"></script>
 		<script type="text/javascript" src="app/lib/moment/moment.js"></script>
 		<script type="text/javascript" src="app/lib/underscore/underscore.js"></script>
@@ -14,6 +15,7 @@
 		<script type="text/javascript" src="app/src/controller/app.ctrl.js"></script>
 		<script type="text/javascript" src="app/src/model/app.mdl.js"></script>
 		<script type="text/javascript" src="app/src/controller/video.ctrl.js"></script>
+		<script type="text/javascript" src="app/src/controller/video_player.ctrl.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="app/css/bootstrap/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css"href="app/lib/font-awesome/css/font-awesome.css"/>
@@ -35,6 +37,7 @@
 			</span>
 		</div>
 		<div class="clearfix"></div>
+		<div ng-include="'app/src/view/modal/video_player.vw.html'"></div>
 		<div ng-include="'app/src/view/page/video_list.vw.html'"></div>
 		<div ng-include="'app/src/view/page/user_history.vw.html'"></div>
 	</body>

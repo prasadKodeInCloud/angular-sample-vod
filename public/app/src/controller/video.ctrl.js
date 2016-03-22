@@ -11,6 +11,11 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 		$scope.showVideoBar();
 	}
 
+	$scope.play = function(){
+		console.log( this.video );
+		angular.element('#video-player-modal').scope().loadVideo( this.video );
+	}
+
 	$scope.setFingerPrint = function(){
 		new Fingerprint2({}).get(function(result){
 			console.log('key: ', result );
