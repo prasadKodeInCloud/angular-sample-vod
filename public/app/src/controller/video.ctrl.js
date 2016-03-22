@@ -3,7 +3,8 @@
 app.controller('videoController', ['$scope','DataService', function( $scope, DataService ){
 	
 	$scope.params = {};
-
+	$scope.scrollPos = 0;
+	$scope.scrollWidth = 800;
 	$scope.init = function(){
 		$scope.showVideoBar();
 	}
@@ -27,4 +28,14 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 		});
 	}
 
+	$scope.scroll = function( direction ){
+		if( direction == 'LEFT')
+			$scope.scrollPos -= $scope.scrollWidth;
+		else
+			$scope.scrollPos += $scope.scrollWidth;
+
+		$('#slideContainer').animate({
+            scrollLeft: $scope.scrollPos
+        }, 800);
+	}
 }]);

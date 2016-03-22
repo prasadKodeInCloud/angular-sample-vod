@@ -8,7 +8,9 @@
 	</form> -->
 	<div class="row" ng-init="init()">
         <div id="slideContainer">
-            <a class="btn btn-warning navigation left" href="#" role="button" style=""> <i class="fa fa-angle-left fa-2x arrow"></i> </a> 
+            <a class="btn btn-warning navigation left" ng-click="scroll('LEFT')" href="#" role="button" style=""> 
+                <i class="fa fa-angle-left fa-2x arrow"></i> 
+            </a> 
             <div ng-repeat="video in params.videos" track-by="video.id" ng-attr-id="{{ 'vid_' + video.id}}" ng-model="video" class="thumbnail">
                 <img src="{{video.imgUrl}}" alt="..."/>
                 <div class="caption">
@@ -28,7 +30,9 @@
                     </p>
                 </div>
             </div>  
-            <a class="btn btn-warning navigation right" href="#" role="button" style=""> <i class="fa fa-angle-right fa-2x arrow"></i> </a>  
+            <a class="btn btn-warning navigation right" ng-click="scroll('RIGHT')" href="#" role="button" style=""> 
+                <i class="fa fa-angle-right fa-2x arrow"></i> 
+            </a>  
         </div>
     </div>
 </div>
