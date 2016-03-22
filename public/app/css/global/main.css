@@ -5,6 +5,10 @@
     background-color: #403F3F
 }
 
+.thumbnail:hover {
+    background-color: #352C2C;
+}
+
 .thumbnail .caption {
     padding: 9px;
     color: #F3E6E6;
