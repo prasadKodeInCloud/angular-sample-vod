@@ -5,8 +5,17 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 	$scope.params = {};
 	$scope.scrollPos = 0;
 	$scope.scrollWidth = 800;
+
 	$scope.init = function(){
+		$scope.setFingerPrint();
 		$scope.showVideoBar();
+	}
+
+	$scope.setFingerPrint = function(){
+		new Fingerprint2({}).get(function(result){
+			console.log('key: ', result );
+			localStorage.setItem('VOD_U', result );
+		});
 	}
 
 	$scope.showVideoBar = function(){

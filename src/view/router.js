@@ -2,6 +2,7 @@
 
 function setup( app,handlers) {
 	app.get('/', function(req, res){
+		console.log('User Info: ',req.headers['user-agent'],  req.headers['x-forwarded-for'] || req.connection.remoteAddress);
  		res.sendFile( ROOT_PATH + '/public/app/index.html'); 
 	});
 
