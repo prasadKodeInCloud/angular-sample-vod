@@ -7,7 +7,10 @@ app.controller('videoPlayerController', ['$scope','DataService',
 		};
 
 		$scope.init = function(){
-			console.log('#### init modal');
+			//close video modal when video is finished.
+			$('#video-player-modal video').bind('ended', function() {
+   				$('#video-player-modal').modal('hide');
+			});
 		}
 
 		$scope.loadVideo = function( video ){
