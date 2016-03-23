@@ -1,6 +1,6 @@
 
 <div class="modal fade" id="video-player-modal" ng-controller="videoPlayerController" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog full-screen">
         <div class="modal-content" ng-init="init()">
         
             <div class="modal-header">
@@ -9,7 +9,7 @@
             </div>
         
             <div class="modal-body">
-               <video style="width:100%" controls="" autoplay="" name="media"><source src="" type="video/mp4"></video>
+               <video class="modal-video" controls="" autoplay="" name="media"><source src="" type="video/mp4"></video>
             </div>
             
             <!-- <div class="modal-footer">
