@@ -48,8 +48,13 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 		else
 			$scope.scrollPos += $scope.scrollWidth;
 
-		$('#slideContainer').animate({
+		$('#slide-container').animate({
             scrollLeft: $scope.scrollPos
         }, 800);
+	}
+
+	$scope.showHistory = function(){
+		$('#slide-container').fadeOut( "fast" );
+		$('#user-video-history-container').fadeIn( "slow" );
 	}
 }]);

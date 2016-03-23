@@ -14,9 +14,9 @@
     color: #F3E6E6;
 }
 
-#slideContainer{
+#slide-container{
     width: auto;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
     white-space: nowrap;
 }
@@ -29,7 +29,7 @@
 }
 
 @media screen and (max-width: 1000px) and (min-width: 440px) {
-    #slideContainer{
+    #slide-container{
         white-space: normal;
     }
 }
