@@ -11,6 +11,14 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 		$scope.showVideoBar();
 	}
 
+	$scope.selectVideo = function(){
+		if($scope.selectedVideo )
+			$scope.selectedVideo.selectedClass = '';
+
+		$scope.selectedVideo = this.video;
+		$scope.selectedVideo.selectedClass = 'video-selected';
+	}
+
 	$scope.play = function(){
 		console.log( this.video );
 		angular.element('#video-player-modal').scope().loadVideo( this.video );

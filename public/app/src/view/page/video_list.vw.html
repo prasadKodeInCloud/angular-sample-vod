@@ -11,7 +11,7 @@
             <a class="btn btn-warning navigation left" ng-click="scroll('LEFT')" href="#" role="button" style=""> 
                 <i class="fa fa-angle-left fa-2x arrow"></i> 
             </a> 
-            <div ng-repeat="video in params.videos" track-by="video.id" ng-attr-id="{{ 'vid_' + video.id}}" ng-model="video" class="thumbnail">
+            <div ng-repeat="video in params.videos" track-by="video.id" ng-attr-id="{{ 'vid_' + video.id}}" ng-model="video" class="thumbnail {{video.selectedClass}}" ng-click="selectVideo()" >
                 <img src="{{video.imgUrl}}" alt="..."/>
                 <div class="caption">
                     <h4>

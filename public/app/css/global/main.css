@@ -9,6 +9,11 @@
     background-color: #352C2C;
 }
 
+.video-selected{
+    border: solid 4px #138A86;
+    background-color: #2F1B1B;
+}
+
 .thumbnail .caption {
     padding: 9px;
     color: #F3E6E6;
