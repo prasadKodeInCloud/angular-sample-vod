@@ -20,7 +20,7 @@ var db = mongo.db('mongodb://'+ dbConfig.mongo.url +'/' + dbConfig.mongo.databas
 db.toObjectId = mongo.ObjectID.createFromHexString;
 //db.bind('users');
 db.bind('users');
-db.bind('activity_log');
+db.bind('activity_logs');
 
 server.start( config, db );
 

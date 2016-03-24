@@ -13,7 +13,7 @@ GLOBAL = {
 	//incase user has manually removed the fingerprint
 	//recreate it again in the client
 	onFingerprint:function( callback ){
-		var key = this.userKey();
+		var key = this.fingerprint();
 		if( key )
 			callback( key );
 		else{

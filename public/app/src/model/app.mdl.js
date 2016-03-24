@@ -6,6 +6,9 @@ app.factory('DataService', [ '$http', function( $http ) {
 		videos: function(){
 			return $http.get( CONFIG.MOVIES_API + '/movies');
 		},
+		saveLog: function( log ){
+			return $http.post( CONFIG.SERVICE_API + '/activities', log );
+		},
 		saveUser: function( key ){
 			var user = {
 				_id: key,

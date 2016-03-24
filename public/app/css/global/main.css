@@ -51,12 +51,11 @@
     visibility: inherit;
     width: 36px;
     z-index: 1;
-    bottom: 0;
     margin-bottom: auto;
     margin-top: auto;
     outline: none;
     opacity: 0.8;
-    top: -300px;
+    top: 230px;
 }
 
 .left{
