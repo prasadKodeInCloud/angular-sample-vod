@@ -8,6 +8,7 @@ This is a sample nodejs application which allows scrolling a list of videos in a
 
 1. Install nodejs (http://nodejs.org/download/)
 2. Clone or download the project in to pc.
+3. Comment line number 5 and uncomment line number 6 of [client config file] ( https://github.com/prasadKodeInCloud/angular-sample-vod/blob/master/public/app/lib/global/config.js)
 3. Run ``` npm install ``` to install all node module dependancies 
 4. Run ```  node index.js ``` to run the application
 5. Application web app will be availabe in http://localhost:3000/ 
@@ -47,3 +48,10 @@ To run the test cases in /test/*.test.js files, please refer to folowing steps
 
 1. Install [mocha](https://www.npmjs.com/package/mocha) testing framework globaly by running ``` npm install -g mocha ```
 2. From the root folder of the app run ``` mocha test/{{testfilename}} ```
+
+## Coding Concerns
+
+ES6 coding is not used in the app to prevent risk of deployment issues of app( within 1 week of time).Grunt is not used since its better to keep the simplicity of app for this level of requirments. Code should be self explanatory in most of the cases.
+
+Prototype inheritance based models structure is created for server to improve code reusability.
+No angular directives being created for the ui, concerning the scope of the project.
