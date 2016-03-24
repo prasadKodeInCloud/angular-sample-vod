@@ -9,6 +9,10 @@
     background-color: #352C2C;
 }
 
+*:focus{
+    outline: none;
+}
+
 .video-selected{
     border: solid 4px #138A86;
     background-color: #2F1B1B;

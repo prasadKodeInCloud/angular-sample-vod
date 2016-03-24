@@ -1,17 +1,12 @@
 
 <div ng-controller="videoController" >
 	
-	<!-- <form>
-	 	<input type="text" name="userName" ng-model="name" placeholder="..." />
-		<button> click </button>
-  			<h1> Hello {{name}}</h1> 
-	</form> -->
 	<div class="row" ng-init="init()">
-        <div id="slide-container">
-            <a class="btn btn-warning navigation left" ng-click="scroll('LEFT')" href="#" role="button" style=""> 
-                <i class="fa fa-angle-left fa-2x arrow"></i> 
-            </a> 
-            <form tabIndex="1" id="form-video-container" ng-keydown="onKeyDown($event)">
+        <div id="slide-container" tabIndex="1" ng-keydown="onKeyDown($event)">
+            <!-- <form tabIndex="1" id="form-video-container" ng-keydown="onKeyDown($event)"> -->
+                <a class="btn btn-warning navigation left" ng-click="scroll('LEFT')" href="#" role="button" style=""> 
+                    <i class="fa fa-angle-left fa-2x arrow"></i> 
+                </a> 
                 <div ng-repeat="video in params.videos" track-by="video.id" ng-attr-id="{{ 'vid_' + video.id}}" ng-model="video" class="thumbnail {{video.selectedClass}}" ng-click="selectVideo()" >
                     <img src="{{video.imgUrl}}" alt="..."/>
                     <div class="caption">
@@ -31,10 +26,10 @@
                         </p>
                     </div>
                 </div> 
-            </form> 
-            <a class="btn btn-warning navigation right" ng-click="scroll('RIGHT')" href="#" role="button" style=""> 
-                <i class="fa fa-angle-right fa-2x arrow"></i> 
-            </a>  
+                <a class="btn btn-warning navigation right" ng-click="scroll('RIGHT')" href="#" role="button" style=""> 
+                    <i class="fa fa-angle-right fa-2x arrow"></i> 
+                </a> 
+           <!--  </form>   -->
         </div>
     </div>
 </div>
