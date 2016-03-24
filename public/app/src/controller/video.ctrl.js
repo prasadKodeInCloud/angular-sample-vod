@@ -62,7 +62,7 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 	}
 
 	$scope.showHistory = function(){
-		$('#slide-container').fadeOut( "fast" );
-		$('#user-video-history-container').fadeIn( "slow" );
+		$('#slide-container').fadeOut( 'fast' );
+		$('#user-video-history-container').fadeIn( 'slow' );
 	}
 }]);

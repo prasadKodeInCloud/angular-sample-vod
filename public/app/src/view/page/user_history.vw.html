@@ -1,6 +1,12 @@
-<div id="user-video-history-container" style="padding:30px; display: none">
+
+<div id="user-video-history-container" ng-controller="videoHistoryController" style="padding:30px; display: none">
  	<div class="row">
-        <div class="col-md-12">                    
+        <div class="col-md-12">    
+            <a class="btn btn-info" style="margin-bottom:30px;float: right" href="#" ng-click="backToMain()">
+                <i class="fa fa-arrow-circle-o-left fa-lg"></i>&nbsp;
+                Back
+            </a>
+            <div class="clearfix"></div>
             <ul class="timeline" id="user-video-history-list">   
 
                 <li class="time-label">
