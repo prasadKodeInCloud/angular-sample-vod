@@ -9,7 +9,7 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 	var _keysHandler = {
 		//NEXT
 		39: function(){
-			if( $scope.selectedVideo.index < $scope.params.videos.length )
+			if( $scope.selectedVideo.index < $scope.params.videos.length - 1 )
 				$scope.selectVideo( $scope.params.videos[ $scope.selectedVideo.index + 1 ]);
 		}, 
 		//PREV
@@ -40,6 +40,15 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 
 		$scope.selectedVideo = video || this.video;
 		$scope.selectedVideo.selectedClass = 'video-selected';
+
+		//auto scroll screen based on selected video position
+		var positionRatio = $('#vid_' + $scope.selectedVideo.id ).offset().left/$('body').width();
+
+		if( positionRatio < 0.2 )
+			$scope.scroll('LEFT');
+		else if( positionRatio > 0.8 )
+			$scope.scroll('RIGHT');
+
 	}
 
 	$scope.play = function( video ){
