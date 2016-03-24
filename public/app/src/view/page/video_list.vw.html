@@ -11,25 +11,27 @@
             <a class="btn btn-warning navigation left" ng-click="scroll('LEFT')" href="#" role="button" style=""> 
                 <i class="fa fa-angle-left fa-2x arrow"></i> 
             </a> 
-            <div ng-repeat="video in params.videos" track-by="video.id" ng-attr-id="{{ 'vid_' + video.id}}" ng-model="video" class="thumbnail {{video.selectedClass}}" ng-click="selectVideo()" >
-                <img src="{{video.imgUrl}}" alt="..."/>
-                <div class="caption">
-                    <h4>
-                        {{video.name}}
-                    </h4>
-                    <p>
-                       <!--  {{video.description}} -->
-                    </p>
-                    <p>
-                        <a href="#" class="btn btn-primary" ng-click="play()" role="button">
-                            Play
-                        </a>
-                        <a href="#" class="btn btn-default" role="button">
-                            Button
-                        </a>
-                    </p>
-                </div>
-            </div>  
+            <form tabIndex="1" id="form-video-container" ng-keydown="onKeyDown($event)">
+                <div ng-repeat="video in params.videos" track-by="video.id" ng-attr-id="{{ 'vid_' + video.id}}" ng-model="video" class="thumbnail {{video.selectedClass}}" ng-click="selectVideo()" >
+                    <img src="{{video.imgUrl}}" alt="..."/>
+                    <div class="caption">
+                        <h4>
+                            {{video.name}}
+                        </h4>
+                        <p>
+                           <!--  {{video.description}} -->
+                        </p>
+                        <p>
+                            <a href="#" class="btn btn-primary" ng-click="play()" role="button">
+                                Play
+                            </a>
+                            <a href="#" class="btn btn-default" role="button">
+                                Button
+                            </a>
+                        </p>
+                    </div>
+                </div> 
+            </form> 
             <a class="btn btn-warning navigation right" ng-click="scroll('RIGHT')" href="#" role="button" style=""> 
                 <i class="fa fa-angle-right fa-2x arrow"></i> 
             </a>  

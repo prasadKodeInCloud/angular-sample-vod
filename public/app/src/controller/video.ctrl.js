@@ -6,22 +6,44 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 	$scope.scrollPos = 0;
 	$scope.scrollWidth = 800;
 
+	var _keysHandler = {
+		//NEXT
+		39: function(){
+			if( $scope.selectedVideo.index < $scope.params.videos.length )
+				$scope.selectVideo( $scope.params.videos[ $scope.selectedVideo.index + 1 ]);
+		}, 
+		//PREV
+		37:function(){
+			if( $scope.selectedVideo.index > 0 )
+				$scope.selectVideo( $scope.params.videos[ $scope.selectedVideo.index - 1 ]);
+		},
+		//PLAY
+		13: function(){
+			if($scope.selectedVideo)
+				$scope.play( $scope.selectedVideo ); 
+		}
+	};
+
 	$scope.init = function(){
 		$scope.setFingerPrint();
 		$scope.showVideoBar();
 	}
 
-	$scope.selectVideo = function(){
+	$scope.onKeyDown = function(  $event ){
+		if( _keysHandler[$event.keyCode ])
+			_keysHandler[$event.keyCode ]();
+	}
+
+	$scope.selectVideo = function( video ){
 		if($scope.selectedVideo )
 			$scope.selectedVideo.selectedClass = '';
 
-		$scope.selectedVideo = this.video;
+		$scope.selectedVideo = video || this.video;
 		$scope.selectedVideo.selectedClass = 'video-selected';
 	}
 
-	$scope.play = function(){
-		console.log( this.video );
-		angular.element('#video-player-modal').scope().loadVideo( this.video );
+	$scope.play = function( video ){
+		angular.element('#video-player-modal').scope().loadVideo( video || this.video );
 	}
 
 	$scope.setFingerPrint = function(){
@@ -37,6 +59,7 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 
 	$scope.showVideoBar = function(){
 		DataService.videos().then( function( response ){
+			var index = 0;
 			$scope.params.videos = _.map( response.data.entries, function( video ){
 				if(video.images && video.images.length > 0 ) 
 					video.imgUrl = video.images[0].url;
@@ -45,6 +68,8 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 				video.url = video.contents[0].url;
 				video.title = video.title.trim();
 				video.name = video.title.length > 20? video.title.substr(0, 20) + '...' : video.title;
+				video.index = index;
+				index++;
 
 				return video;
 			});
