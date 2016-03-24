@@ -94,6 +94,6 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 	$scope.showHistory = function(){
 		$('#slide-container').fadeOut( 'fast' );
 		$('#user-video-history-container').fadeIn( 'slow' );
-		angular.element('#user-video-history-list').scope().showHistory( GLOBAL.videos );
+		angular.element('#user-video-history-list').scope().showHistory( );
 	}
 }]);
