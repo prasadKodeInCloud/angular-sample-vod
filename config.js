@@ -12,10 +12,10 @@ module.exports = {
 			database: 'vod'
 		}
 	},
-
+ 
 	dbProduction: {
 		mongo: {
-			url: 'sa:1qaz2wsx@ds039860.mongolab.com:39860/vod',
+			url: 'sa:1qaz2wsx@ds037155.mlab.com:37155',
 			database: 'vod'
 		}
 	},

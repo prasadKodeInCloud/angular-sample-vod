@@ -12,7 +12,7 @@ winston.handleExceptions(new winston.transports.File({
 	filename: config.logger.exception
 }));
 
-var dbConfig =  config.dbLocal; 
+var dbConfig =  config.dbProduction; 
 
 var db = mongo.db('mongodb://'+ dbConfig.mongo.url +'/' + dbConfig.mongo.database , { safe:true });
 
