@@ -25,10 +25,14 @@ app.controller('videoController', ['$scope','DataService', function( $scope, Dat
 	}
 
 	$scope.setFingerPrint = function(){
-		new Fingerprint2({}).get(function(result){
-			console.log('key: ', result );
-			localStorage.setItem('VOD_U', result );
-		});
+		var fingerPrint = GLOBAL.fingerprint();
+		if( !fingerPrint ){
+			GLOBAL.setFingerPrint( function( key ){
+				DataService.saveUser( key ).then( function( response ){
+					console.log('user:', response.data );
+				});
+			});
+		}
 	}
 
 	$scope.showVideoBar = function(){
