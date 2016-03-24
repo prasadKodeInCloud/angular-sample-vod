@@ -8,14 +8,17 @@ function UserHandler( db ){
 	return {
 		
 		create:function( req, res ){
-			usersMdl.create()
-			res.json({ msg: 'created user'});
+			usersMdl.create( req.body, function( result ){
+				res.json( result );
+			});	
 		},
 		find:function( req, res ){
-			res.json({ msg: 'created user'});
+			usersMdl.find( req.body, function( result ){
+				res.json( result );
+			});
 		},
 		get:function( req, res ){
-			usersMdl.get( req.params, function( result ){
+			usersMdl.get( { _id: req.params.userId }, function( result ){
 				res.json( result );
 			});
 		}

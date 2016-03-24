@@ -39,7 +39,7 @@ app.use(methodOverride());
 function start(config, db) {
 	var handlers = {
 		user: require('./src/controller/user-handler.ctrl').load( db ),
-	    //history: require('./src/controller/historyHandler').load(db)
+	    activity: require('./src/controller/activity-handler.ctrl').load(db)
 	};
 	
 	router.setup( app, handlers);

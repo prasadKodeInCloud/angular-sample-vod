@@ -7,9 +7,13 @@ function setup( app,handlers) {
 	});
 
 	console.log("set router ####");
-	app.get('/api/user', handlers.user.get );
+	app.get('/api/users/:userId', handlers.user.get );
 	app.post('/api/users', handlers.user.create );
-	app.post('/api/find', handlers.user.find );	
+	app.post('/api/users/find', handlers.user.find );	
+
+	app.get('/api/activities/:activityId', handlers.activity.get );
+	app.post('/api/activities', handlers.activity.create );
+	app.post('/api/activities/find', handlers.activity.find );	
 }
  
 exports.setup = setup;

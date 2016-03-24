@@ -1,25 +1,13 @@
 
 var AbstractModel = require('./abstract.mdl').class;
 
-
 function UsersModel( db ){
 	this.db = db;
+	this.col = 'users';
 }
 
 UsersModel.prototype = new AbstractModel();
 
-/**
- * Find user by given selector
- * @param  {Object}   selector 
- * @param  {Function} callback 
- * @return {Object/null}       user by selected query 
- */
-UsersModel.prototype.get = function( selector, callback ){
-	this.db.users.findOne( selector, function( err, result ){
-		if( callback )
-			callback( result );
-	});
-}
 
 /**
  * Create a new user if no user user is found for _id.
@@ -34,23 +22,8 @@ UsersModel.prototype.create = function( user, callback ){
 		if( result )
 			callback({ _id: result._id });
 		else{
-			self.db.users.insert( user, function( err,result){
-				callback({ _id: result[0] });
-			});
+			self._insert( user,callback );
 		}
-	});
-}
-
-/**
- * Remove a user by a given selector
- * @param  {Object}   selector 
- * @param  {Function} callback 
- * @return {Object}            
- */
-UsersModel.prototype.remove = function( selector, callback ){
-	this.db.users.remove( selector, function( err, result ){
-		if( callback )
-			callback( result );
 	});
 }
 
