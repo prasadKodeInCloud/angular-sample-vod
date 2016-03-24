@@ -26,6 +26,13 @@ AbstractModel.prototype.get = function( selector, callback ){
 	});
 }
 
+/**
+ * Search for collection items for a given selector and options
+ * @param  {Object}   selector 
+ * @param  {Object}   options  
+ * @param  {Function} callback 
+ * @return {Object/null}           
+ */
 AbstractModel.prototype.find = function( selector, options, callback ){
 	options = options || {};
 
