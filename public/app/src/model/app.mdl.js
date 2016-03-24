@@ -9,6 +9,9 @@ app.factory('DataService', [ '$http', function( $http ) {
 		saveLog: function( log ){
 			return $http.post( CONFIG.SERVICE_API + '/activities', log );
 		},
+		videosViewHistory: function( params, options ){
+			return $http.post( CONFIG.SERVICE_API + '/activities/find', { params: params, options: options });
+		},
 		saveUser: function( key ){
 			var user = {
 				_id: key,

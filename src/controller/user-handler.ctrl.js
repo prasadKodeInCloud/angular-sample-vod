@@ -13,7 +13,7 @@ function UserHandler( db ){
 			});	
 		},
 		find:function( req, res ){
-			usersMdl.find( req.body, function( result ){
+			usersMdl.find( req.body.params, req.body.options, function( result ){
 				res.json( result );
 			});
 		},

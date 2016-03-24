@@ -11,7 +11,7 @@ function ActivityHandler( db ){
 			});	
 		},
 		find:function( req, res ){
-			activityLogsMdl.find( req.body, function( result ){
+			activityLogsMdl.find( req.body.params, req.body.options, function( result ){
 				res.json( result );
 			});
 		},

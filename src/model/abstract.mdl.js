@@ -1,4 +1,9 @@
 
+var moment = require('moment');
+var utcDate = function(){	
+	return new Date( moment().toISOString() );
+};
+
 function AbstractModel( db ){
 	this.db = db;
 	this.col = '';
@@ -21,14 +26,23 @@ AbstractModel.prototype.get = function( selector, callback ){
 	});
 }
 
-AbstractModel.prototype.find = function( selector, callback ){
-	this.db[this.col].find( selector ).toArray( function( err, result ){
+AbstractModel.prototype.find = function( selector, options, callback ){
+	options = options || {};
+
+	options.sort = options.sort || { created: -1 };
+	options.skip = options.skip || 0;
+	options.limit = options.limit || 50;
+
+	this.db[this.col].find( selector ).sort( options.sort ).skip( options.skip ).
+		limit( options.limit ).toArray( function( err, result ){
 		if( callback )
 			callback( result );
 	});
 }
 
 AbstractModel.prototype.create = function( obj, callback ){
+	obj.created = utcDate();
+	obj.updated = obj.created;
 	this._insert( obj, callback );
 }
 
